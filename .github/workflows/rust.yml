@@ -1,4 +1,4 @@
-name: Rust
+name: Test and build spark
 
 on:
   push:
@@ -10,24 +10,51 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  build-linux:
-
+  test:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Run tests
+      run: cargo test --verbose
+   
+  release-linux:
+    needs: test
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      run: cargo build --release
+    - uses: actions/upload-artifact@v1
+      with: 
+        name: spark
+        path: target/release/spark
       
-  build-macos:
-
+  release-macos:
+    needs: test
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
     - name: Build
-      run: cargo build --verbose
-    - name: Run tests
-      run: cargo test --verbose
+      run: cargo build --release
+    - uses: actions/upload-artifact@v1
+      with: 
+        name: spark
+        path: target/release/spark
+        
+  release-windows:
+    needs: test
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build
+      run: cargo build --release
+    - uses: actions/upload-artifact@v1
+      with: 
+        name: spark
+        path: target/release/spark
