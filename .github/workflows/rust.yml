@@ -22,7 +22,7 @@ jobs:
       run: cargo build --release
     - uses: actions/upload-artifact@v1
       with: 
-        name: spark
+        name: spark-linux
         path: target/release/spark
       
   release-macos:
@@ -36,7 +36,7 @@ jobs:
       run: cargo build --release
     - uses: actions/upload-artifact@v1
       with: 
-        name: spark
+        name: spark-macos
         path: target/release/spark
         
   release-windows:
@@ -50,5 +50,5 @@ jobs:
       run: cargo build --release
     - uses: actions/upload-artifact@v1
       with: 
-        name: spark
+        name: spark-windows
         path: target/release/spark.exe
