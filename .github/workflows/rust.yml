@@ -10,22 +10,14 @@ env:
   CARGO_TERM_COLOR: always
 
 jobs:
-  test:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
-    steps:
-    - uses: actions/checkout@v2
-    - name: Run tests
-      run: cargo test --verbose
    
   release-linux:
-    needs: test
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
+    - name: Run tests
+      run: cargo test --verbose
     - name: Build
       run: cargo build --release
     - uses: actions/upload-artifact@v1
@@ -34,11 +26,12 @@ jobs:
         path: target/release/spark
       
   release-macos:
-    needs: test
     runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2
+    - name: Run tests
+      run: cargo test --verbose
     - name: Build
       run: cargo build --release
     - uses: actions/upload-artifact@v1
@@ -47,11 +40,12 @@ jobs:
         path: target/release/spark
         
   release-windows:
-    needs: test
-    runs-on: macos-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v2
+    - name: Run tests
+      run: cargo test --verbose
     - name: Build
       run: cargo build --release
     - uses: actions/upload-artifact@v1
