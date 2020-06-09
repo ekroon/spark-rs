@@ -51,4 +51,4 @@ jobs:
     - uses: actions/upload-artifact@v1
       with: 
         name: spark
-        path: target/release/spark
+        path: target/release/spark.exe
