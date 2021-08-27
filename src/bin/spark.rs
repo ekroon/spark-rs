@@ -3,14 +3,14 @@ use std::io::{stdin, Read};
 use clap::{App, Arg};
 use itertools::{Itertools, MinMaxResult};
 
-const VERSION: &str = "0.1.0";
+const VERSION: &str = "0.1.1-dev";
 
 fn main() {
     let mut clap_config = App::new("Spark").version(VERSION).arg(
-        Arg::with_name("INPUT")
+        Arg::new("INPUT")
             .about("The input to use, space or comma separated")
             .allow_hyphen_values(true)
-            .multiple(true)
+            .multiple_values(true)
             .use_delimiter(true),
     );
 
@@ -20,7 +20,6 @@ fn main() {
     } else {
         let mut input: Vec<u8> = Vec::new();
         if stdin().read_to_end(&mut input).is_ok() {
-            println!("DONE READING");
             if let Ok(s) = String::from_utf8(input) {
                 let numbers = s
                     .split_whitespace()

@@ -1,6 +1,6 @@
 [package]
 name = "spark-rs"
-version = "0.1.0"
+version = "0.1.1-dev"
 authors = ["Erwin Kroon <erwin@k3n.nl>"]
 edition = "2018"
 
@@ -8,5 +8,5 @@ edition = "2018"
 
 
 [dependencies]
-itertools = "0.9.0"
-clap = "3.0.0-beta.1"
+itertools = "^0.10.1"
+clap = "^3.0.0-beta.4"
