@@ -8,7 +8,7 @@ const VERSION: &str = "0.1.1-dev";
 fn main() {
     let mut clap_config = App::new("Spark").version(VERSION).arg(
         Arg::new("INPUT")
-            .about("The input to use, space or comma separated")
+            .help("The input to use, space or comma separated")
             .allow_hyphen_values(true)
             .multiple_values(true)
             .use_delimiter(true),
