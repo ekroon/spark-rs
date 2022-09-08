@@ -3,10 +3,8 @@ use std::io::{stdin, Read};
 use clap::{App, Arg};
 use itertools::{Itertools, MinMaxResult};
 
-const VERSION: &str = "0.1.1-dev";
-
 fn main() {
-    let mut clap_config = App::new("Spark").version(VERSION).arg(
+    let mut clap_config = App::new("Spark").version(env!("CARGO_PKG_VERSION")).arg(
         Arg::new("INPUT")
             .help("The input to use, space or comma separated")
             .allow_hyphen_values(true)
