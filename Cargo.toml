@@ -8,5 +8,5 @@ edition = "2018"
 
 
 [dependencies]
-itertools = "^0.10.4"
+itertools = "^0.10.5"
 clap = "^3.2.22"
