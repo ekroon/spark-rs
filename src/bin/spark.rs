@@ -1,19 +1,23 @@
 use std::io::{stdin, Read};
 
-use clap::{App, Arg};
+use clap::{Arg, Command};
 use itertools::{Itertools, MinMaxResult};
 
 fn main() {
-    let mut clap_config = App::new("Spark").version(env!("CARGO_PKG_VERSION")).arg(
-        Arg::new("INPUT")
-            .help("The input to use, space or comma separated")
-            .allow_hyphen_values(true)
-            .multiple_values(true)
-            .use_delimiter(true),
-    );
+    let clap_config = Command::new("Spark")
+        .about("Sparklines for the terminal")
+        .version(env!("CARGO_PKG_VERSION"))
+        .arg(
+            Arg::new("INPUT")
+                .help("The input to use, space or comma separated")
+                .allow_hyphen_values(true)
+                .num_args(0..)
+                .use_value_delimiter(true),
+        );
 
-    if let Some(input) = clap_config.get_matches_mut().values_of("INPUT") {
-        let numbers = input.flat_map(|v| v.parse::<f64>()).collect::<Vec<_>>();
+    let matches = clap_config.get_matches();
+    if let Some(input) = matches.get_many::<String>("INPUT") {
+        let numbers = input.flat_map(|s| s.parse::<f64>()).collect_vec();
         println!("{}", spark(&numbers))
     } else {
         let mut input: Vec<u8> = Vec::new();
@@ -25,11 +29,8 @@ fn main() {
                     .flat_map(|v| v.parse::<f64>())
                     .collect::<Vec<_>>();
                 println!("{}", spark(&numbers));
-                return;
             }
         }
-
-        clap_config.print_help().unwrap();
     }
 }
 
