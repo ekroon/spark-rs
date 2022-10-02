@@ -1,6 +1,6 @@
 [package]
 name = "spark-rs"
-version = "0.2.1"
+version = "0.3.0"
 authors = ["Erwin Kroon <erwin@k3n.nl>"]
 edition = "2018"
 
@@ -9,4 +9,4 @@ edition = "2018"
 
 [dependencies]
 itertools = "^0.10.5"
-clap = "^3.2.22"
+clap = "^4.0.4"
