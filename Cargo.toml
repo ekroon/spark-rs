@@ -1,6 +1,6 @@
 [package]
 name = "spark-rs"
-version = "0.3.0"
+version = "0.4.0"
 authors = ["Erwin Kroon <erwin@k3n.nl>"]
 edition = "2018"
 
