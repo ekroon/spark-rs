@@ -2,7 +2,7 @@
 name = "spark-rs"
 version = "0.4.1"
 authors = ["Erwin Kroon <erwin@k3n.nl>"]
-edition = "2018"
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
