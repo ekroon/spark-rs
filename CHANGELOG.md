@@ -1,5 +1,22 @@
 # Changelog
 
+## [0.5.0](https://github.com/ekroon/spark-rs/compare/v0.4.3...v0.5.0) (2022-12-28)
+
+
+### Features
+
+* add support for different ticks ([d425d95](https://github.com/ekroon/spark-rs/commit/d425d95699c58f587d1321f6291dd0f644e2fee5))
+
+
+### Bug Fixes
+
+* `spark --ticks abcd 1 2 3 4 5 6 7 8` was incorrect ([d425d95](https://github.com/ekroon/spark-rs/commit/d425d95699c58f587d1321f6291dd0f644e2fee5))
+
+
+### Refactoring
+
+* use sparklines dependency ([7315b84](https://github.com/ekroon/spark-rs/commit/7315b843b2debf82b407762de2a8ad1954be3cb1))
+
 ## [0.4.3](https://github.com/ekroon/spark-rs/compare/v0.4.2...v0.4.3) (2022-12-28)
 
 
