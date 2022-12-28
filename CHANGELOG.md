@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.4.3](https://github.com/ekroon/spark-rs/compare/v0.4.2...v0.4.3) (2022-12-28)
+
+
+### Miscellaneous
+
+* change changelog types ([4037aeb](https://github.com/ekroon/spark-rs/commit/4037aeb132c97369bcbf0889d9c8c20d5c845a9c))
+* rename master -&gt; main ([468c23c](https://github.com/ekroon/spark-rs/commit/468c23c0ddc80aec67ed035ac22570f895173161))
+
 ## [0.4.2](https://github.com/ekroon/spark-rs/compare/v0.4.1...v0.4.2) (2022-12-28)
 
 
