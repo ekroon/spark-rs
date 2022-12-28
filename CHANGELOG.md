@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/ekroon/spark-rs/compare/v0.4.1...v0.4.2) (2022-12-28)
+
+
+### Bug Fixes
+
+* new rust edition ([7cfa178](https://github.com/ekroon/spark-rs/commit/7cfa1786c7ac3c06a715b0b5fb1b1478b016e6f2))
+
 ## [0.4.1](https://github.com/ekroon/spark-rs/compare/v0.4.0...v0.4.1) (2022-12-27)
 
 
