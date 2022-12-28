@@ -1,12 +1,15 @@
+extern crate core;
+
 use std::io::{stdin, Read};
 
-use clap::{Arg, Command};
+use clap::{arg, Arg, Command};
 use itertools::Itertools;
 
 fn main() {
     let clap_config = Command::new("Spark")
         .about("Sparklines for the terminal")
         .version(env!("CARGO_PKG_VERSION"))
+        .arg(arg!(-t --ticks <TICKS> "The characters to use for the sparkline"))
         .arg(
             Arg::new("INPUT")
                 .help("The input to use, space or comma separated")
@@ -16,9 +19,19 @@ fn main() {
         );
 
     let matches = clap_config.get_matches();
+    let default = sparklines::TICKS.as_slice();
+    let mut ticks = None;
+    if let Some(input_ticks) = matches.get_one::<String>("ticks") {
+        ticks = Some(input_ticks.chars().collect::<Vec<_>>());
+    }
+    if ticks == None {
+        ticks = Some(default.to_vec());
+    }
+    let ticks = ticks.unwrap();
+    let string_spark = sparklines::StringSpark::new(ticks.as_slice());
     if let Some(input) = matches.get_many::<String>("INPUT") {
         let numbers = input.flat_map(|s| s.parse::<f64>()).collect_vec();
-        println!("{}", spark(&numbers))
+        println!("{}", string_spark.spark(&numbers))
     } else {
         let mut input: Vec<u8> = Vec::new();
         if stdin().read_to_end(&mut input).is_ok() {
@@ -28,27 +41,8 @@ fn main() {
                     .flat_map(|s| s.split(','))
                     .flat_map(|v| v.parse::<f64>())
                     .collect::<Vec<_>>();
-                println!("{}", spark(&numbers));
+                println!("{}", string_spark.spark(&numbers));
             }
         }
-    }
-}
-
-fn spark(data: &[f64]) -> String {
-    sparklines::spark(data)
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn graphs_data() {
-        assert_eq!(spark(&[1.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0]), "▁▂▃▄▅▆▇█");
-    }
-
-    #[test]
-    fn equalizes_at_midtier_when_all_equal() {
-        assert_eq!(spark(&[1.0, 1.0, 1.0, 1.0]), "▅▅▅▅")
     }
 }
