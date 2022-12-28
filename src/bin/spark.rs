@@ -1,7 +1,7 @@
 use std::io::{stdin, Read};
 
 use clap::{Arg, Command};
-use itertools::{Itertools, MinMaxResult};
+use itertools::Itertools;
 
 fn main() {
     let clap_config = Command::new("Spark")
@@ -34,29 +34,8 @@ fn main() {
     }
 }
 
-const TICKS: [char; 8] = ['▁', '▂', '▃', '▄', '▅', '▆', '▇', '█'];
-
 fn spark(data: &[f64]) -> String {
-    let mut result = String::with_capacity(data.len() * 4);
-    let middle_idx = TICKS.len() / 2;
-    match data.iter().minmax() {
-        MinMaxResult::MinMax(min, max) => {
-            if min.eq(max) {
-                data.iter().for_each(|_| {
-                    result.push(TICKS[middle_idx]);
-                })
-            } else {
-                let f = (max - min) / (TICKS.len() - 1) as f64;
-                data.iter().for_each(|v| {
-                    let idx = ((v - min) / f) as usize;
-                    result.push(TICKS[idx]);
-                });
-            }
-        }
-        MinMaxResult::OneElement(_) => result.push(TICKS[middle_idx]),
-        MinMaxResult::NoElements => {}
-    }
-    result
+    sparklines::spark(data)
 }
 
 #[cfg(test)]
