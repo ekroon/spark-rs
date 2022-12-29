@@ -24,7 +24,7 @@ fn main() {
     if let Some(input_ticks) = matches.get_one::<String>("ticks") {
         ticks = Some(input_ticks.chars().collect::<Vec<_>>());
     }
-    if ticks == None {
+    if ticks.is_none() {
         ticks = Some(default.to_vec());
     }
     let ticks = ticks.unwrap();
