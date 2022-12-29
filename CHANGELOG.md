@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.6.0](https://github.com/ekroon/spark-rs/compare/v0.5.0...v0.6.0) (2022-12-29)
+
+
+### Features
+
+* add --min --max support ([769673b](https://github.com/ekroon/spark-rs/commit/769673bf3d59aa40605e1aefe2de234c32d30aeb))
+
+
+### Refactoring
+
+* fix clippy ([50ec76b](https://github.com/ekroon/spark-rs/commit/50ec76b8a0da266d967949479bb1b2c867fee38b))
+
 ## [0.5.0](https://github.com/ekroon/spark-rs/compare/v0.4.3...v0.5.0) (2022-12-28)
 
 
