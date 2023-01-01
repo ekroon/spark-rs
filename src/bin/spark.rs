@@ -46,8 +46,8 @@ fn main() {
     if let Some(input_max) = matches.get_one::<f64>("max") {
         max = Some(*input_max);
     }
-    let string_spark = if min.is_some() && max.is_some() {
-        sparklines::StringSpark::new_with_min_max(&ticks, min.unwrap(), max.unwrap())
+    let string_spark = if let (Some(min), Some(max)) = (min, max) {
+        sparklines::StringSpark::new_with_min_max(&ticks, min, max)
     } else {
         sparklines::StringSpark::new(ticks.as_slice())
     };
