@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.6.2](https://github.com/ekroon/spark-rs/compare/v0.6.1...v0.6.2) (2023-01-02)
+
+
+### Continuous Integration
+
+* add manual release of tag ([cec85cf](https://github.com/ekroon/spark-rs/commit/cec85cf682d52c3430bad007aa5b9efb2610dc5d))
+* fix release build ([30a5403](https://github.com/ekroon/spark-rs/commit/30a540333a70cdd28165c15f53e6424560fae588))
+
 ## [0.6.1](https://github.com/ekroon/spark-rs/compare/v0.6.0...v0.6.1) (2023-01-02)
 
 

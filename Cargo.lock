@@ -285,7 +285,7 @@ checksum = "bb7d1f0d3021d347a83e556fc4683dea2ea09d87bccdf88ff5c12545d89d5efb"
 
 [[package]]
 name = "spark-rs"
-version = "0.6.1"
+version = "0.6.2"
 dependencies = [
  "assert_cmd",
  "clap",
