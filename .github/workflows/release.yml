@@ -1,5 +1,10 @@
 name: release
 on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'tag to release'
+        required: true
   push:
     tags:
       - 'v*'
@@ -14,7 +19,8 @@ jobs:
       - name: Get version
         id: get_version
         run: |
-          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+          REF_VERSION=${GITHUB_REF#refs/tags/v}
+          echo "VERSION=${REF_VERSION:-${{ github.event.inputs.tag }}}" >> $GITHUB_ENV
           echo "version: ${{ env.VERSION }}"
           
   build-release:
