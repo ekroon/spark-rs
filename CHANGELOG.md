@@ -1,5 +1,23 @@
 # Changelog
 
+## [0.6.1](https://github.com/ekroon/spark-rs/compare/v0.6.0...v0.6.1) (2023-01-02)
+
+
+### Miscellaneous
+
+* bump predicates from 2.1.4 to 2.1.5 ([3afab79](https://github.com/ekroon/spark-rs/commit/3afab79cf7d1d5f9cfbb86158d85f492a2e2731a))
+
+
+### Refactoring
+
+* fix clippy ([c1d1da5](https://github.com/ekroon/spark-rs/commit/c1d1da5275c0323f47e51884e5771bd8eb56d94c))
+
+
+### Continuous Integration
+
+* add release build ([31f6479](https://github.com/ekroon/spark-rs/commit/31f64798afa7d66de309719eb81d9943d075db0c))
+* speed up CI ([7ed6db4](https://github.com/ekroon/spark-rs/commit/7ed6db4a3490a59141311afca2b7a2e16cfb4b8a))
+
 ## [0.6.0](https://github.com/ekroon/spark-rs/compare/v0.5.0...v0.6.0) (2022-12-29)
 
 
