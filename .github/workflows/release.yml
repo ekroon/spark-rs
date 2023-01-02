@@ -15,14 +15,26 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       version: ${{ env.VERSION }}
+      tag: ${{ env.TAG }}
     steps:
       - name: Get version
+        shell: bash
         id: get_version
         run: |
-          REF_VERSION=${GITHUB_REF#refs/tags/v}
-          echo "VERSION=${REF_VERSION:-${{ github.event.inputs.tag }}}" >> $GITHUB_ENV
-          echo "version: ${{ env.VERSION }}"
-          
+          INPUT_TAG=${{ github.event.inputs.tag }}
+          if [ -z "$INPUT_TAG" ]; then
+            INPUT_TAG=${GITHUB_REF#refs/tags/}
+          else
+            INPUT_VERSION=${INPUT_TAG#v}
+          fi
+          if [ -z "$INPUT_VERSION" ]; then
+                INPUT_VERSION=${INPUT_TAG#refs/tags/}
+          fi
+          echo "INPUT_TAG=$INPUT_TAG"
+          echo "INPUT_VERSION=$INPUT_VERSION"
+          echo "TAG=${INPUT_TAG}" >> $GITHUB_ENV
+          echo "VERSION=${INPUT_VERSION}" >> $GITHUB_ENV
+
   build-release:
     name: build-release
     needs: ["get-version"]
@@ -40,6 +52,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          ref: ${{ needs.get-version.outputs.tag }}
       - name: install Rust
         uses: actions-rs/toolchain@v1
         with:
@@ -50,8 +64,9 @@ jobs:
       - name: Build
         run: cargo build --release
       - name: Build archive
+        shell: bash
         run: |
-          export_dir="sparklines-${{ needs.get-version.outputs.version }}-${{ matrix.build }}"
+          export_dir="spark-${{ needs.get-version.outputs.version }}-${{ matrix.build }}"
           mkdir $export_dir
           if [ "${{ matrix.build }}" = "windows" ]; then
             cp "target/release/spark.exe" "$export_dir/"
@@ -63,7 +78,8 @@ jobs:
             echo "ASSET=$export_dir.tar.gz" >> $GITHUB_ENV
           fi
       - name: Upload release archive
+        shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release upload v${{ needs.get-version.outputs.version }} $ASSET
+          gh release upload ${{ needs.get-version.outputs.tag }} $ASSET
