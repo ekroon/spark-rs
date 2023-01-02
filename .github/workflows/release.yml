@@ -1,0 +1,63 @@
+name: release
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  get-version:
+    name: get-version
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ env.VERSION }}
+    steps:
+      - name: Get version
+        id: get_version
+        run: |
+          echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_ENV
+          echo "version: ${{ env.VERSION }}"
+          
+  build-release:
+    name: build-release
+    needs: ["get-version"]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        build: [linux, macos, windows]
+        include:
+          - build: linux
+            os: ubuntu-latest
+          - build: macos
+            os: macos-latest
+          - build: windows
+            os: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: install Rust
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          profile: minimal
+          override: true
+      - uses: Swatinem/rust-cache@v2
+      - name: Build
+        run: cargo build --release
+      - name: Build archive
+        run: |
+          export_dir="sparklines-${{ needs.get-version.outputs.version }}-${{ matrix.build }}"
+          mkdir $export_dir
+          if [ "${{ matrix.build }}" = "windows" ]; then
+            cp "target/release/rg.exe" "$export_dir/"
+            7z a "$export_dir.zip" "$export_dir"
+            echo "ASSET=$export_dir.zip" >> $GITHUB_ENV
+          else
+            cp "target/release/rg" "$export_dir/"
+            tar czf "$export_dir.tar.gz" "$export_dir"
+            echo "ASSET=$export_dir.tar.gz" >> $GITHUB_ENV
+          fi
+      - name: Upload release archive
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release upload v${{ needs.get-version.outputs.version }} $ASSET
