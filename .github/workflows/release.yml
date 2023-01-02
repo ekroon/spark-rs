@@ -48,11 +48,11 @@ jobs:
           export_dir="sparklines-${{ needs.get-version.outputs.version }}-${{ matrix.build }}"
           mkdir $export_dir
           if [ "${{ matrix.build }}" = "windows" ]; then
-            cp "target/release/rg.exe" "$export_dir/"
+            cp "target/release/spark.exe" "$export_dir/"
             7z a "$export_dir.zip" "$export_dir"
             echo "ASSET=$export_dir.zip" >> $GITHUB_ENV
           else
-            cp "target/release/rg" "$export_dir/"
+            cp "target/release/spark" "$export_dir/"
             tar czf "$export_dir.tar.gz" "$export_dir"
             echo "ASSET=$export_dir.tar.gz" >> $GITHUB_ENV
           fi
