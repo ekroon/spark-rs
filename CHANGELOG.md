@@ -1,5 +1,42 @@
 # Changelog
 
+## [0.6.0](https://github.com/ekroon/spark-rs/compare/v0.5.0...v0.6.0) (2022-12-29)
+
+
+### Features
+
+* add --min --max support ([769673b](https://github.com/ekroon/spark-rs/commit/769673bf3d59aa40605e1aefe2de234c32d30aeb))
+
+
+### Refactoring
+
+* fix clippy ([50ec76b](https://github.com/ekroon/spark-rs/commit/50ec76b8a0da266d967949479bb1b2c867fee38b))
+
+## [0.5.0](https://github.com/ekroon/spark-rs/compare/v0.4.3...v0.5.0) (2022-12-28)
+
+
+### Features
+
+* add support for different ticks ([d425d95](https://github.com/ekroon/spark-rs/commit/d425d95699c58f587d1321f6291dd0f644e2fee5))
+
+
+### Bug Fixes
+
+* `spark --ticks abcd 1 2 3 4 5 6 7 8` was incorrect ([d425d95](https://github.com/ekroon/spark-rs/commit/d425d95699c58f587d1321f6291dd0f644e2fee5))
+
+
+### Refactoring
+
+* use sparklines dependency ([7315b84](https://github.com/ekroon/spark-rs/commit/7315b843b2debf82b407762de2a8ad1954be3cb1))
+
+## [0.4.3](https://github.com/ekroon/spark-rs/compare/v0.4.2...v0.4.3) (2022-12-28)
+
+
+### Miscellaneous
+
+* change changelog types ([4037aeb](https://github.com/ekroon/spark-rs/commit/4037aeb132c97369bcbf0889d9c8c20d5c845a9c))
+* rename master -&gt; main ([468c23c](https://github.com/ekroon/spark-rs/commit/468c23c0ddc80aec67ed035ac22570f895173161))
+
 ## [0.4.2](https://github.com/ekroon/spark-rs/compare/v0.4.1...v0.4.2) (2022-12-28)
 
 
