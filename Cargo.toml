@@ -1,7 +1,7 @@
 [package]
 name = "spark-rs"
 description =  "Sparklines for the console"
-version = "0.6.2"
+version = "0.6.3"
 authors = ["Erwin Kroon <erwin@k3n.nl>"]
 edition = "2021"
 license = "MIT"

@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.6.3](https://github.com/ekroon/spark-rs/compare/v0.6.2...v0.6.3) (2023-01-23)
+
+
+### Miscellaneous
+
+* bump assert_cmd from 2.0.7 to 2.0.8 ([efb214f](https://github.com/ekroon/spark-rs/commit/efb214f606323508e399d87451f4652dc5037a1d))
+* bump clap from 4.0.32 to 4.1.1 ([9be949a](https://github.com/ekroon/spark-rs/commit/9be949aef0fdf6bb1cccde9d052a9e7fa8f893c0))
+* bump sparklines from 0.2.0 to 0.2.1 ([3baced1](https://github.com/ekroon/spark-rs/commit/3baced142db4db716a273a0f8c61cabd5791c019))
+
 ## [0.6.2](https://github.com/ekroon/spark-rs/compare/v0.6.1...v0.6.2) (2023-01-02)
 
 
