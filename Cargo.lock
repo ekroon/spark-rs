@@ -296,9 +296,9 @@ dependencies = [
 
 [[package]]
 name = "sparklines"
-version = "0.2.0"
+version = "0.2.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "94a293584576cae575c8de6e34267dbfbd0daf3ffd6a5aa391f9c8525f1900c5"
+checksum = "c6ef2372b37ab347575640ac420e157fc099695ed22bbd1f747414b0ebb9ae99"
 
 [[package]]
 name = "strsim"
