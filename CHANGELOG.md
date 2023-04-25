@@ -1,5 +1,26 @@
 # Changelog
 
+## [0.6.4](https://github.com/ekroon/spark-rs/compare/v0.6.3...v0.6.4) (2023-04-25)
+
+
+### Miscellaneous
+
+* bump assert_cmd from 2.0.10 to 2.0.11 ([494cd3b](https://github.com/ekroon/spark-rs/commit/494cd3b78ca2ffb4272a0cf32f71a14d5cc9bf9b))
+* bump assert_cmd from 2.0.8 to 2.0.10 ([1f4d32f](https://github.com/ekroon/spark-rs/commit/1f4d32fd9117c866900d09dbcf5f9ad4d7e85f4a))
+* bump clap from 4.1.1 to 4.1.3 ([6cf5b12](https://github.com/ekroon/spark-rs/commit/6cf5b120a7bc72efb30e4819e7ff8e6c3498a95f))
+* bump clap from 4.1.13 to 4.2.1 ([35c5ca6](https://github.com/ekroon/spark-rs/commit/35c5ca69a1b76924fa50dfaa9ad95a9d057dc1ae))
+* bump clap from 4.1.3 to 4.1.4 ([3553435](https://github.com/ekroon/spark-rs/commit/3553435b97fe3ceb3d5e4fc895a70e3c97971e83))
+* bump clap from 4.1.4 to 4.1.6 ([7f1caf7](https://github.com/ekroon/spark-rs/commit/7f1caf727376996e5a56beea9d5ea58938560f58))
+* bump clap from 4.1.6 to 4.1.7 ([ed1ba93](https://github.com/ekroon/spark-rs/commit/ed1ba93a0165970f65cd19616f7a5e300d188ed7))
+* bump clap from 4.1.7 to 4.1.8 ([c657ec9](https://github.com/ekroon/spark-rs/commit/c657ec9167f39d752e76e0343eb41ccf24eef014))
+* bump clap from 4.1.8 to 4.1.9 ([1493e0f](https://github.com/ekroon/spark-rs/commit/1493e0f8ccbf533fc0a19995c854e2c88129197e))
+* bump clap from 4.1.9 to 4.1.13 ([f09d97d](https://github.com/ekroon/spark-rs/commit/f09d97db966b528a54a1f0d59084eb9d178f8eda))
+* bump clap from 4.2.1 to 4.2.3 ([79a8dde](https://github.com/ekroon/spark-rs/commit/79a8ddeb3ea851eac591683cb43527d1dc6a5bf2))
+* bump clap from 4.2.3 to 4.2.4 ([17fb2d4](https://github.com/ekroon/spark-rs/commit/17fb2d4db1800db319eeb5773b65c654e034611a))
+* bump predicates from 2.1.5 to 3.0.1 ([665bc2d](https://github.com/ekroon/spark-rs/commit/665bc2d5589e476743554ebd5371f9195f072b9c))
+* bump predicates from 3.0.1 to 3.0.2 ([f12c6a7](https://github.com/ekroon/spark-rs/commit/f12c6a717daacdd28efd2e0979be584c536834ee))
+* bump predicates from 3.0.2 to 3.0.3 ([2039970](https://github.com/ekroon/spark-rs/commit/203997067bac4a96bd5a91b11e14204327eca524))
+
 ## [0.6.3](https://github.com/ekroon/spark-rs/compare/v0.6.2...v0.6.3) (2023-01-23)
 
 
