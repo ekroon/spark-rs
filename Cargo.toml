@@ -10,7 +10,7 @@ license = "MIT"
 
 
 [dependencies]
-itertools = "^0.10.5"
+itertools = "^0.11.0"
 clap = "^4.2.4"
 sparklines = "^0.2.1"
 
