@@ -5,6 +5,7 @@ version = "0.6.4"
 authors = ["Erwin Kroon <erwin@k3n.nl>"]
 edition = "2021"
 license = "MIT"
+repository = "https://github.com/ekroon/spark-rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -17,3 +18,8 @@ sparklines = "^0.2.1"
 [dev-dependencies]
 assert_cmd = "2.0.17"
 predicates = "3.1.3"
+
+# The profile that 'dist' will build with
+[profile.dist]
+inherits = "release"
+lto = "thin"
