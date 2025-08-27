@@ -1,5 +1,18 @@
 # Changelog
 
+## [0.6.5](https://github.com/ekroon/spark-rs/compare/v0.6.4...v0.6.5) (2025-08-27)
+
+
+### Miscellaneous
+
+* bump assert_cmd from 2.0.11 to 2.0.16 ([24fa6fc](https://github.com/ekroon/spark-rs/commit/24fa6fccb8077d023efc5fda39502aad587dad3a))
+* bump assert_cmd from 2.0.16 to 2.0.17 ([106e075](https://github.com/ekroon/spark-rs/commit/106e075331694040fe246c09aa59bd88441e844b))
+* bump clap from 4.2.4 to 4.3.19 ([c90277d](https://github.com/ekroon/spark-rs/commit/c90277d6cf7f5725eb6361444c163740d6793be3))
+* bump clap from 4.3.19 to 4.5.13 ([44ee1cd](https://github.com/ekroon/spark-rs/commit/44ee1cdb2408bc592350eafe03b579a4b93991c2))
+* bump itertools from 0.10.5 to 0.13.0 ([2829013](https://github.com/ekroon/spark-rs/commit/282901347879efab9eb54fae828e70be8f002ec4))
+* bump itertools from 0.13.0 to 0.14.0 ([1d04abf](https://github.com/ekroon/spark-rs/commit/1d04abfa02ff6ee32ea84a3621c8737c2f6887a4))
+* bump predicates from 3.0.3 to 3.1.3 ([4669b01](https://github.com/ekroon/spark-rs/commit/4669b016a532f978ebd342513e560ed93272c130))
+
 ## [0.6.4](https://github.com/ekroon/spark-rs/compare/v0.6.3...v0.6.4) (2023-04-25)
 
 
