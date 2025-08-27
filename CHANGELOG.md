@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.6.4](https://github.com/ekroon/spark-rs/compare/v0.6.4...v0.6.5) (2025-08-27)
+
 ## [0.6.4](https://github.com/ekroon/spark-rs/compare/v0.6.3...v0.6.4) (2023-04-25)
 
 
