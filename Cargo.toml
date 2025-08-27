@@ -13,7 +13,7 @@ repository = "https://github.com/ekroon/spark-rs"
 [dependencies]
 itertools = "^0.14.0"
 clap = "^4.5.13"
-sparklines = "^0.2.1"
+sparklines = "^0.3.0"
 
 [dev-dependencies]
 assert_cmd = "2.0.17"
